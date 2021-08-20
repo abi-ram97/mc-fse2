@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="info" name="mc-stocks" packages="com.academy">
+    <Appenders>
+      <Kafka name="Kafka" topic="log-test">
+            <PatternLayout pattern="mc-stocks %d{yyyy-MM-dd HH:mm:ss.SSS} [%t] %-4p %C{1.}.%M - %m%n%rEx"/>
+            <Property name="bootstrap.servers">localhost:9092</Property>
+        </Kafka>
+        <Async name="Async">
+            <AppenderRef ref="Kafka"/>
+        </Async>
+
+        <Console name="stdout" target="SYSTEM_OUT">
+            <PatternLayout
+				pattern="%d{yyyy-MM-dd HH:mm:ss.SSS} %style{[%t]}{magenta} %pid %highlight{%-4p}{ERROR=red blink, WARN=yellow bold, INFO=green} %style{%C{2.}.%M}{cyan} - %m%n%rEx"
+				disableAnsi="false"/>
+        </Console>
+
+    </Appenders>
+    <Loggers>
+        <Root level="INFO">
+            <AppenderRef ref="Kafka"/>
+           <AppenderRef ref="stdout"/> 
+        </Root>
+        <Logger name="org.apache.kafka" level="warn" />
+    </Loggers>
+</Configuration>

@@ -1,0 +1,32 @@
+spring:
+  application:
+    name: mc-company-service
+  profiles:
+    active:
+    - ${ACTIVE_PROFILE:local}
+    
+server:
+  port: ${PORT:8081}
+  error:
+    include-message: always
+    include-binding-errors: always
+management:
+  endpoints:
+    web:
+      exposure:
+        include:
+        - metrics
+        - prometheus
+        - health
+
+services:
+  stock:
+    baseurl: ${STOCK_SERVICE_URL:http://localhost:8082/api/v1.0/market/stock}
+    
+amazon:
+  dynamodb:
+    endpoint: ${DB_URL:http://localhost:8000}
+  aws:
+    secretKey: ${AWS_SECRET_KEY:test}
+    accessKey: ${AWS_ACCESS_KEY:test}
+    region: ${AWS_REGION:local}

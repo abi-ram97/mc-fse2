@@ -1,0 +1,39 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: stock-service
+spec:
+  selector:
+    matchLabels:
+      app: stock-node
+  template:
+    metadata:
+      labels:
+        app: stock-node
+    spec:
+      containers:
+      - name: stock-ic
+        image: docker.io/abiraman123/mc-stock-service:v0.1
+        env:
+        - name: DB_URL
+          value: "aws-rds.default.svc.cluster.local:3306/stocksdb"
+        - name: DB_PASSWORD
+          value: "password"
+        - name: ACTIVE_PROFILE
+          value: "aws"
+        ports:
+        - containerPort: 8082
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: stock-service
+spec:
+  type: LoadBalancer 
+  selector:
+    app: stock-node
+  externalTrafficPolicy: Cluster
+  ports:
+  - protocol: TCP
+    port: 8082
+    targetPort: 8082

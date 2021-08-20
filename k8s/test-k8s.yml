@@ -1,0 +1,34 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: microservice-deployment
+  labels:
+    app: mc-stock-service
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: mc-stock-service
+  template:
+    metadata:
+      labels:
+        app: mc-stock-service
+    spec:
+      containers:
+      - name: mc-stocks 
+        image: docker.io/
+        ports:
+        - containerPort: 8082
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: java-microservice-service
+spec:
+  type: LoadBalancer 
+  selector:
+    app: java-microservice
+  ports:
+  - protocol: TCP
+    port: 80
+    targetPort: 8080

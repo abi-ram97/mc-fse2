@@ -1,0 +1,19 @@
+aws iam create-role --role-name awsEKSClusterRole --assume-role-policy-document file://"cluster-role.json"
+
+aws iam attach-role-policy --policy-arn arn:aws:iam::aws:policy/AmazonEKSClusterPolicy --role-name awsEKSClusterRole
+
+aws eks update-kubeconfig --region us-east-2 --name mc-fse --role-arn arn:aws:iam::495390640421:role/awsEKSClusterRole
+
+eksctl create iamidentitymapping --cluster mc-fse --arn arn:aws:iam::495390640421:user/abiraman.m@mml.local --group system:masters --username ops-user
+
+eksctl create cluster --name test-k8s --version 1.20 --with-oidc --without-nodegroup
+
+eksctl create fargateprofile --cluster test-k8s --name test-fargate --namespace default
+
+eksctl create nodegroup --cluster test-k8s --region us-east-2 --name nodes --node-type t2.small --nodes 1 --nodes-min 1 --nodes-max 2 --managed
+
+kubectl create deployment hello-node --image=k8s.gcr.io/echoserver:1.4
+
+kubectl expose deployment hello-node --type=LoadBalancer --port=8082
+
+kubectl create service externalname aws-rds --external-name stocks-rds.cpww3n4jiefr.us-east-2.rds.amazonaws.com --tcp=3306:3306

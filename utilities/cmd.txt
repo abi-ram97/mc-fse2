@@ -1,0 +1,30 @@
+.\prometheus --config.file=prometheus.yml
+
+bin\grafana-server.exe
+
+bin\elasticsearch
+
+bin\logstash -f config\logstash-filter.conf
+
+bin\kibana
+
+bin\windows-x86-64\StartSonar
+
+---DynamoDB Local---
+
+java -Djava.library.path=./DynamoDBLocal_lib -jar DynamoDBLocal.jar -sharedDb
+aws dynamodb create-table --cli-input-json file://create-table-company.json --endpoint-url http://localhost:8000
+aws dynamodb list-tables --endpoint-url http://localhost:8000
+
+----Kafka---
+
+bin\windows\zookeeper-server-start.bat config\zookeeper.properties
+bin\windows\kafka-server-start.bat config\server.properties
+
+---Docker----
+
+docker build -t mc-stock-service:v0.1 .
+docker images
+docker run <image_id> -p 8080:8080
+docker tag <image_id> abiraman123/mc-stock-service:v0.1
+docker push abiraman123/mc-stock-service:v0.1

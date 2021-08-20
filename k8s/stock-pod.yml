@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: stocks-node
+spec:
+  containers:
+  - name: stocks-ic
+    image: docker.io/abiraman123/mc-stock-service:v0.1
+    env:
+    - name: DB_URL
+      value: "aws-rds.default.svc.cluster.local:3306/stocksdb"
+    - name: DB_PASSWORD
+      value: "password"
+    - name: ACTIVE_PROFILE
+      value: "aws"

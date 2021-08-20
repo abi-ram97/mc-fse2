@@ -1,0 +1,625 @@
+Microsoft Windows [Version 10.0.19042.1165]
+(c) Microsoft Corporation. All rights reserved.
+
+C:\Users\User\Downloads>eksctl create iamidentitymapping --cluster mc-fse --arn arn:aws:iam::495390640421:user/abiraman.m@mml.local --group system:masters --username ops-user
+2021-08-14 12:41:02 [ℹ]  eksctl version 0.61.0-rc.0
+2021-08-14 12:41:02 [ℹ]  using region us-east-2
+Error: getting auth ConfigMap: Unauthorized
+
+C:\Users\User\Downloads>eksctl create cluster \
+Error: validation for \ failed, name must satisfy regular expression pattern: [a-zA-Z][-a-zA-Z0-9]*
+
+C:\Users\User\Downloads> --name <my-cluster> \
+The system cannot find the file specified.
+
+C:\Users\User\Downloads> --version <1.21> \
+The system cannot find the file specified.
+
+C:\Users\User\Downloads> --with-oidc \
+'--with-oidc' is not recognized as an internal or external command,
+operable program or batch file.
+
+C:\Users\User\Downloads>eksctl create cluster --name test-k8s --version 1.20 --with-oidc --without-nodegroup
+2021-08-14 12:45:35 [ℹ]  eksctl version 0.61.0-rc.0
+2021-08-14 12:45:35 [ℹ]  using region us-east-2
+2021-08-14 12:45:36 [ℹ]  setting availability zones to [us-east-2c us-east-2a us-east-2b]
+2021-08-14 12:45:36 [ℹ]  subnets for us-east-2c - public:192.168.0.0/19 private:192.168.96.0/19
+2021-08-14 12:45:36 [ℹ]  subnets for us-east-2a - public:192.168.32.0/19 private:192.168.128.0/19
+2021-08-14 12:45:36 [ℹ]  subnets for us-east-2b - public:192.168.64.0/19 private:192.168.160.0/19
+2021-08-14 12:45:36 [ℹ]  using Kubernetes version 1.20
+2021-08-14 12:45:36 [ℹ]  creating EKS cluster "test-k8s" in "us-east-2" region with
+2021-08-14 12:45:36 [ℹ]  if you encounter any issues, check CloudFormation console or try 'eksctl utils describe-stacks --region=us-east-2 --cluster=test-k8s'
+2021-08-14 12:45:36 [ℹ]  CloudWatch logging will not be enabled for cluster "test-k8s" in "us-east-2"
+2021-08-14 12:45:36 [ℹ]  you can enable it with 'eksctl utils update-cluster-logging --enable-types={SPECIFY-YOUR-LOG-TYPES-HERE (e.g. all)} --region=us-east-2 --cluster=test-k8s'
+2021-08-14 12:45:36 [ℹ]  Kubernetes API endpoint access will use default of {publicAccess=true, privateAccess=false} for cluster "test-k8s" in "us-east-2"
+2021-08-14 12:45:36 [ℹ]  2 sequential tasks: { create cluster control plane "test-k8s", 2 sequential sub-tasks: { 4 sequential sub-tasks: { wait for control plane to become ready, associate IAM OIDC provider, 2 sequential sub-tasks: { create IAM role for serviceaccount "kube-system/aws-node", create serviceaccount "kube-system/aws-node" }, restart daemonset "kube-system/aws-node" }, 1 task: { create addons } } }
+2021-08-14 12:45:36 [ℹ]  building cluster stack "eksctl-test-k8s-cluster"
+2021-08-14 12:45:38 [ℹ]  deploying stack "eksctl-test-k8s-cluster"
+2021-08-14 12:46:08 [ℹ]  waiting for CloudFormation stack "eksctl-test-k8s-cluster"
+2021-08-14 12:46:39 [ℹ]  waiting for CloudFormation stack "eksctl-test-k8s-cluster"
+2021-08-14 12:47:40 [ℹ]  waiting for CloudFormation stack "eksctl-test-k8s-cluster"
+2021-08-14 12:48:41 [ℹ]  waiting for CloudFormation stack "eksctl-test-k8s-cluster"
+2021-08-14 12:49:42 [ℹ]  waiting for CloudFormation stack "eksctl-test-k8s-cluster"
+2021-08-14 12:50:43 [ℹ]  waiting for CloudFormation stack "eksctl-test-k8s-cluster"
+2021-08-14 12:51:44 [ℹ]  waiting for CloudFormation stack "eksctl-test-k8s-cluster"
+2021-08-14 12:52:45 [ℹ]  waiting for CloudFormation stack "eksctl-test-k8s-cluster"
+2021-08-14 12:53:46 [ℹ]  waiting for CloudFormation stack "eksctl-test-k8s-cluster"
+2021-08-14 12:54:47 [ℹ]  waiting for CloudFormation stack "eksctl-test-k8s-cluster"
+2021-08-14 12:55:48 [ℹ]  waiting for CloudFormation stack "eksctl-test-k8s-cluster"
+2021-08-14 12:56:50 [ℹ]  waiting for CloudFormation stack "eksctl-test-k8s-cluster"
+2021-08-14 13:01:00 [ℹ]  building iamserviceaccount stack "eksctl-test-k8s-addon-iamserviceaccount-kube-system-aws-node"
+2021-08-14 13:01:03 [ℹ]  deploying stack "eksctl-test-k8s-addon-iamserviceaccount-kube-system-aws-node"
+2021-08-14 13:01:04 [ℹ]  waiting for CloudFormation stack "eksctl-test-k8s-addon-iamserviceaccount-kube-system-aws-node"
+2021-08-14 13:01:20 [ℹ]  waiting for CloudFormation stack "eksctl-test-k8s-addon-iamserviceaccount-kube-system-aws-node"
+2021-08-14 13:01:34 [ℹ]  serviceaccount "kube-system/aws-node" already exists
+2021-08-14 13:01:34 [ℹ]  updated serviceaccount "kube-system/aws-node"
+2021-08-14 13:01:36 [ℹ]  daemonset "kube-system/aws-node" restarted
+2021-08-14 13:03:46 [ℹ]  waiting for the control plane availability...
+2021-08-14 13:03:46 [✔]  saved kubeconfig as "C:\\Users\\User\\.kube\\config"
+2021-08-14 13:03:46 [ℹ]  no tasks
+2021-08-14 13:03:46 [✔]  all EKS cluster resources for "test-k8s" have been created
+2021-08-14 13:05:56 [ℹ]  kubectl command should work with "C:\\Users\\User\\.kube\\config", try 'kubectl get nodes'
+2021-08-14 13:05:56 [✔]  EKS cluster "test-k8s" in "us-east-2" region is ready
+
+C:\Users\User\Downloads>kubectl get svc
+NAME         TYPE        CLUSTER-IP   EXTERNAL-IP   PORT(S)   AGE
+kubernetes   ClusterIP   10.100.0.1   <none>        443/TCP   12m
+
+C:\Users\User\Downloads>kubectl get pods
+No resources found in default namespace.
+
+C:\Users\User\Downloads>kubectl get pods
+No resources found in default namespace.
+
+C:\Users\User\Downloads>eksctl create nodegroup --cluster test-k8s --region us-east-2 --name nodes --node-type t2.small --nodes 1 --nodes-min 1 --nodes-max 2 --managed
+2021-08-14 13:34:06 [ℹ]  eksctl version 0.61.0-rc.0
+2021-08-14 13:34:06 [ℹ]  using region us-east-2
+2021-08-14 13:34:07 [ℹ]  will use version 1.20 for new nodegroup(s) based on control plane version
+2021-08-14 13:34:14 [ℹ]  nodegroup "nodes" will use "" [AmazonLinux2/1.20]
+2021-08-14 13:34:16 [ℹ]  1 nodegroup (nodes) was included (based on the include/exclude rules)
+2021-08-14 13:34:16 [ℹ]  will create a CloudFormation stack for each of 1 managed nodegroups in cluster "test-k8s"
+2021-08-14 13:34:17 [ℹ]  2 sequential tasks: { fix cluster compatibility, 1 task: { 1 task: { create managed nodegroup "nodes" } } }
+2021-08-14 13:34:17 [ℹ]  checking cluster stack for missing resources
+2021-08-14 13:34:19 [ℹ]  cluster stack has all required resources
+2021-08-14 13:34:19 [ℹ]  building managed nodegroup stack "eksctl-test-k8s-nodegroup-nodes"
+2021-08-14 13:34:19 [ℹ]  deploying stack "eksctl-test-k8s-nodegroup-nodes"
+2021-08-14 13:34:19 [ℹ]  waiting for CloudFormation stack "eksctl-test-k8s-nodegroup-nodes"
+2021-08-14 13:34:36 [ℹ]  waiting for CloudFormation stack "eksctl-test-k8s-nodegroup-nodes"
+2021-08-14 13:34:54 [ℹ]  waiting for CloudFormation stack "eksctl-test-k8s-nodegroup-nodes"
+2021-08-14 13:35:14 [ℹ]  waiting for CloudFormation stack "eksctl-test-k8s-nodegroup-nodes"
+2021-08-14 13:35:32 [ℹ]  waiting for CloudFormation stack "eksctl-test-k8s-nodegroup-nodes"
+2021-08-14 13:35:53 [ℹ]  waiting for CloudFormation stack "eksctl-test-k8s-nodegroup-nodes"
+2021-08-14 13:36:13 [ℹ]  waiting for CloudFormation stack "eksctl-test-k8s-nodegroup-nodes"
+2021-08-14 13:36:33 [ℹ]  waiting for CloudFormation stack "eksctl-test-k8s-nodegroup-nodes"
+2021-08-14 13:36:51 [ℹ]  waiting for CloudFormation stack "eksctl-test-k8s-nodegroup-nodes"
+2021-08-14 13:37:10 [ℹ]  waiting for CloudFormation stack "eksctl-test-k8s-nodegroup-nodes"
+2021-08-14 13:37:27 [ℹ]  waiting for CloudFormation stack "eksctl-test-k8s-nodegroup-nodes"
+2021-08-14 13:37:44 [ℹ]  waiting for CloudFormation stack "eksctl-test-k8s-nodegroup-nodes"
+2021-08-14 13:38:04 [ℹ]  waiting for CloudFormation stack "eksctl-test-k8s-nodegroup-nodes"
+2021-08-14 13:38:21 [ℹ]  waiting for CloudFormation stack "eksctl-test-k8s-nodegroup-nodes"
+2021-08-14 13:38:38 [ℹ]  waiting for CloudFormation stack "eksctl-test-k8s-nodegroup-nodes"
+2021-08-14 13:38:39 [ℹ]  no tasks
+2021-08-14 13:38:39 [✔]  created 0 nodegroup(s) in cluster "test-k8s"
+2021-08-14 13:38:40 [ℹ]  nodegroup "nodes" has 1 node(s)
+2021-08-14 13:38:40 [ℹ]  node "ip-192-168-48-31.us-east-2.compute.internal" is ready
+2021-08-14 13:38:40 [ℹ]  waiting for at least 1 node(s) to become ready in "nodes"
+2021-08-14 13:38:40 [ℹ]  nodegroup "nodes" has 1 node(s)
+2021-08-14 13:38:40 [ℹ]  node "ip-192-168-48-31.us-east-2.compute.internal" is ready
+2021-08-14 13:38:40 [✔]  created 1 managed nodegroup(s) in cluster "test-k8s"
+2021-08-14 13:38:42 [ℹ]  checking security group configuration for all nodegroups
+2021-08-14 13:38:42 [ℹ]  all nodegroups have up-to-date configuration
+
+C:\Users\User\Downloads>kubectl get pods
+No resources found in default namespace.
+
+C:\Users\User\Downloads>kubectl get services
+NAME         TYPE        CLUSTER-IP   EXTERNAL-IP   PORT(S)   AGE
+kubernetes   ClusterIP   10.100.0.1   <none>        443/TCP   49m
+
+C:\Users\User\Downloads>kubectl create deployment hello-node --image=k8s.gcr.io/echoserver:1.4
+deployment.apps/hello-node created
+
+C:\Users\User\Downloads>kubectl get pods
+NAME                          READY   STATUS    RESTARTS   AGE
+hello-node-7567d9fdc9-tcrxn   0/1     Pending   0          9s
+
+C:\Users\User\Downloads>kubectl get pods
+NAME                          READY   STATUS    RESTARTS   AGE
+hello-node-7567d9fdc9-tcrxn   0/1     Pending   0          14s
+
+C:\Users\User\Downloads>kubectl get pods
+NAME                          READY   STATUS    RESTARTS   AGE
+hello-node-7567d9fdc9-tcrxn   0/1     Pending   0          21s
+
+C:\Users\User\Downloads>kubectl get pods
+NAME                          READY   STATUS    RESTARTS   AGE
+hello-node-7567d9fdc9-tcrxn   0/1     Pending   0          29s
+
+C:\Users\User\Downloads>kubectl get pods
+NAME                          READY   STATUS    RESTARTS   AGE
+hello-node-7567d9fdc9-tcrxn   1/1     Running   0          74s
+
+C:\Users\User\Downloads>kubectl get deployments
+NAME         READY   UP-TO-DATE   AVAILABLE   AGE
+hello-node   1/1     1            1           4m4s
+
+C:\Users\User\Downloads>kubectl expose deployment hello-node --type=LoadBalancer --port=8080
+service/hello-node exposed
+
+C:\Users\User\Downloads>kubectl get services
+NAME         TYPE           CLUSTER-IP      EXTERNAL-IP                                                               PORT(S)          AGE
+hello-node   LoadBalancer   10.100.157.92   aeade78d2e8dc43049ab82c33031fd21-1591100011.us-east-2.elb.amazonaws.com   8080:32232/TCP   14s
+kubernetes   ClusterIP      10.100.0.1      <none>                                                                    443/TCP          55m
+
+C:\Users\User\Downloads>kubectl get services
+NAME         TYPE           CLUSTER-IP      EXTERNAL-IP                                                               PORT(S)          AGE
+hello-node   LoadBalancer   10.100.157.92   aeade78d2e8dc43049ab82c33031fd21-1591100011.us-east-2.elb.amazonaws.com   8080:32232/TCP   41s
+kubernetes   ClusterIP      10.100.0.1      <none>                                                                    443/TCP          55m
+
+C:\Users\User\Downloads>kubectl get services
+NAME         TYPE           CLUSTER-IP      EXTERNAL-IP                                                               PORT(S)          AGE
+hello-node   LoadBalancer   10.100.157.92   aeade78d2e8dc43049ab82c33031fd21-1591100011.us-east-2.elb.amazonaws.com   8080:32232/TCP   69m
+kubernetes   ClusterIP      10.100.0.1      <none>                                                                    443/TCP          124m
+
+C:\Users\User\Downloads>kubectl get pods
+NAME                          READY   STATUS    RESTARTS   AGE
+hello-node-7567d9fdc9-tcrxn   1/1     Running   0          77m
+
+C:\Users\User\Downloads>kubectl get services
+NAME         TYPE           CLUSTER-IP      EXTERNAL-IP                                                               PORT(S)          AGE
+hello-node   LoadBalancer   10.100.157.92   aeade78d2e8dc43049ab82c33031fd21-1591100011.us-east-2.elb.amazonaws.com   8080:32232/TCP   73m
+kubernetes   ClusterIP      10.100.0.1      <none>                                                                    443/TCP          128m
+
+C:\Users\User\Downloads>kubectl detele hello-node
+Error: unknown command "detele" for "kubectl"
+
+Did you mean this?
+        delete
+
+Run 'kubectl --help' for usage.
+
+C:\Users\User\Downloads>kubectl delete hello-node
+error: the server doesn't have a resource type "hello-node"
+
+C:\Users\User\Downloads>kubectl get deployments
+NAME         READY   UP-TO-DATE   AVAILABLE   AGE
+hello-node   1/1     1            1           79m
+
+C:\Users\User\Downloads>kubectl delete deployments hello-node
+deployment.apps "hello-node" deleted
+
+C:\Users\User\Downloads>kubectl delete service hello-node
+service "hello-node" deleted
+
+C:\Users\User\Downloads>kubectl get pods
+No resources found in default namespace.
+
+C:\Users\User\Downloads>cd c:\k8s
+
+c:\k8s>kubectl apply -f ext_service.yml
+error: error when retrieving current configuration of:
+Resource: "/v1, Resource=services", GroupVersionKind: "/v1, Kind=Service"
+Name: "aws-rds", Namespace: "default"
+Object: &{map["apiVersion":"v1" "kind":"Service" "metadata":map["annotations":map["kubectl.kubernetes.io/last-applied-configuration":""] "name":"aws-rds" "namespace":"default"] "spec":map["externalName":"stocks-rds.cpww3n4jiefr.us-east-2.rds.amazonaws.com" "ports":[map["name":"http" "port":'\u0cea' "protocol":"TCP" "targetPort":'\u0cea']] "type":"ExternalName"]]}
+from server for: "ext_service.yml": Get https://EDA2515C11B859A809DC31F1612AFBAF.yl4.us-east-2.eks.amazonaws.com/api/v1/namespaces/default/services/aws-rds: getting credentials: exec: exec: "aws-iam-authenticator": executable file not found in %PATH%
+
+c:\k8s>kubectl create service externalname aws-rds --external-name stocks-rds.cpww3n4jiefr.us-east-2.rds.amazonaws.com
+Unable to connect to the server: getting credentials: exec: exec: "aws-iam-authenticator": executable file not found in %PATH%
+
+c:\k8s>kubectl get svc
+Unable to connect to the server: getting credentials: exec: exec: "aws-iam-authenticator": executable file not found in %PATH%
+
+c:\k8s>cd c:\users\user\Downloads
+
+c:\Users\User\Downloads>kubectl get svc
+NAME         TYPE        CLUSTER-IP   EXTERNAL-IP   PORT(S)   AGE
+kubernetes   ClusterIP   10.100.0.1   <none>        443/TCP   136m
+
+c:\Users\User\Downloads>kubectl create service externalname aws-rds --external-name stocks-rds.cpww3n4jiefr.us-east-2.rds.amazonaws.com
+service/aws-rds created
+
+c:\Users\User\Downloads>kubectl get services
+NAME         TYPE           CLUSTER-IP   EXTERNAL-IP                                           PORT(S)   AGE
+aws-rds      ExternalName   <none>       stocks-rds.cpww3n4jiefr.us-east-2.rds.amazonaws.com   <none>    11s
+kubernetes   ClusterIP      10.100.0.1   <none>                                                443/TCP   136m
+
+c:\Users\User\Downloads>kubectl get services
+NAME         TYPE           CLUSTER-IP   EXTERNAL-IP                                           PORT(S)   AGE
+aws-rds      ExternalName   <none>       stocks-rds.cpww3n4jiefr.us-east-2.rds.amazonaws.com   <none>    34s
+kubernetes   ClusterIP      10.100.0.1   <none>                                                443/TCP   136m
+
+c:\Users\User\Downloads>kubectl delete service aws-rds
+service "aws-rds" deleted
+
+c:\Users\User\Downloads>kubectl create service externalname aws-rds --external-name stocks-rds.cpww3n4jiefr.us-east-2.rds.amazonaws.com --tcp=3306:3306
+service/aws-rds created
+
+c:\Users\User\Downloads>kubectl get services
+NAME         TYPE           CLUSTER-IP   EXTERNAL-IP                                           PORT(S)    AGE
+aws-rds      ExternalName   <none>       stocks-rds.cpww3n4jiefr.us-east-2.rds.amazonaws.com   3306/TCP   5s
+kubernetes   ClusterIP      10.100.0.1   <none>                                                443/TCP    138m
+
+c:\Users\User\Downloads>kubectl describe service aws-rds
+Name:              aws-rds
+Namespace:         default
+Labels:            app=aws-rds
+Annotations:       <none>
+Selector:          app=aws-rds
+Type:              ExternalName
+IP Families:       <none>
+IP:
+IPs:               <none>
+External Name:     stocks-rds.cpww3n4jiefr.us-east-2.rds.amazonaws.com
+Port:              3306-3306  3306/TCP
+TargetPort:        3306/TCP
+Endpoints:         <none>
+Session Affinity:  None
+Events:            <none>
+
+c:\Users\User\Downloads>kubectl get pods
+No resources found in default namespace.
+
+c:\Users\User\Downloads>kubectl create deployment hello-node --image=k8s.gcr.io/echoserver:1.4
+deployment.apps/hello-node created
+
+c:\Users\User\Downloads>kubectl expose deployment hello-node --type=LoadBalancer --port=8080
+service/hello-node exposed
+
+c:\Users\User\Downloads>kubectl get pods
+NAME                          READY   STATUS              RESTARTS   AGE
+hello-node-7567d9fdc9-xrz44   0/1     ContainerCreating   0          67s
+
+c:\Users\User\Downloads>kubectl get pods
+NAME                          READY   STATUS    RESTARTS   AGE
+hello-node-7567d9fdc9-xrz44   1/1     Running   0          72s
+
+c:\Users\User\Downloads>kubectl exec -it hello-node-7567d9fdc9-xrz44 bash
+kubectl exec [POD] [COMMAND] is DEPRECATED and will be removed in a future version. Use kubectl exec [POD] -- [COMMAND] instead.
+root@hello-node-7567d9fdc9-xrz44:/# ping aws-rds
+bash: ping: command not found
+root@hello-node-7567d9fdc9-xrz44:/# curl aws-rds
+^C
+root@hello-node-7567d9fdc9-xrz44:/# telnet
+bash: telnet: command not found
+root@hello-node-7567d9fdc9-xrz44:/# yum install telnet
+bash: yum: command not found
+root@hello-node-7567d9fdc9-xrz44:/# exit
+exit
+command terminated with exit code 127
+
+c:\Users\User\Downloads>kubectl exec -it hello-node-7567d9fdc9-xrz44 -- /bin/sh
+# ping aws-rds
+/bin/sh: 1: ping: not found
+# curl google.com
+<HTML><HEAD><meta http-equiv="content-type" content="text/html;charset=utf-8">
+<TITLE>301 Moved</TITLE></HEAD><BODY>
+<H1>301 Moved</H1>
+The document has moved
+<A HREF="http://www.google.com/">here</A>.
+</BODY></HTML>
+# curl aws-rds.svc.cluster.local
+curl: (6) Could not resolve host: aws-rds.svc.cluster.local
+# curl aws-rds.default.svc.cluster.local
+
+.com
+^C
+# curl aws-rds.default.svc.cluster.local.com:3306\stocksdb
+curl: (6) Could not resolve host: aws-rds.default.svc.cluster.local.com
+# curl aws-rds.default.svc.cluster.local:3306
+8.0.250L{\}X.%i���☻��§{fF▲p/♂M`}.>mysql_native_password!☺��♦#08S01Got packets out of order# exit
+
+c:\Users\User\Downloads>kubectl apply -f c:\k8s\stock-service.yml
+error: error parsing c:\k8s\stock-service.yml: error converting YAML to JSON: yaml: line 14: found character that cannot start any token
+
+c:\Users\User\Downloads>kubectl apply -f c:\k8s\stock-service.yml
+pod/stocks-node created
+
+c:\Users\User\Downloads>kubectl get pods
+NAME                          READY   STATUS    RESTARTS   AGE
+hello-node-7567d9fdc9-xrz44   1/1     Running   0          28m
+stocks-node                   0/1     Pending   0          9s
+
+c:\Users\User\Downloads>kubectl get pods
+NAME                          READY   STATUS    RESTARTS   AGE
+hello-node-7567d9fdc9-xrz44   1/1     Running   0          29m
+stocks-node                   0/1     Pending   0          14s
+
+c:\Users\User\Downloads>kubeclt get services
+'kubeclt' is not recognized as an internal or external command,
+operable program or batch file.
+
+c:\Users\User\Downloads>kubectl get services
+NAME         TYPE           CLUSTER-IP      EXTERNAL-IP                                                               PORT(S)          AGE
+aws-rds      ExternalName   <none>          stocks-rds.cpww3n4jiefr.us-east-2.rds.amazonaws.com                       3306/TCP         34m
+hello-node   LoadBalancer   10.100.241.48   a2b69a139a87a4e04a29ca1905fece78-2142842876.us-east-2.elb.amazonaws.com   8080:31470/TCP   28m
+kubernetes   ClusterIP      10.100.0.1      <none>                                                                    443/TCP          172m
+
+c:\Users\User\Downloads>kubeclt delete service hello-node
+'kubeclt' is not recognized as an internal or external command,
+operable program or batch file.
+
+c:\Users\User\Downloads>kubectl delete service hello-node
+service "hello-node" deleted
+
+c:\Users\User\Downloads>kubectl get deployments
+NAME         READY   UP-TO-DATE   AVAILABLE   AGE
+hello-node   1/1     1            1           30m
+
+c:\Users\User\Downloads>kubectl delete deployment hello-node
+deployment.apps "hello-node" deleted
+
+c:\Users\User\Downloads>kubectl get pods
+NAME          READY   STATUS    RESTARTS   AGE
+stocks-node   1/1     Running   0          117s
+
+c:\Users\User\Downloads>kubectl get podskubectl describe pods stocks-node
+error: the server doesn't have a resource type "podskubectl"
+
+c:\Users\User\Downloads>kubectl describe pods stocks-node
+Name:                 stocks-node
+Namespace:            default
+Priority:             2000001000
+Priority Class Name:  system-node-critical
+Node:                 fargate-ip-192-168-115-88.us-east-2.compute.internal/192.168.115.88
+Start Time:           Sat, 14 Aug 2021 15:46:33 +0530
+Labels:               eks.amazonaws.com/fargate-profile=test-fargate
+Annotations:          CapacityProvisioned: 0.25vCPU 0.5GB
+                      Logging: LoggingDisabled: LOGGING_CONFIGMAP_NOT_FOUND
+                      kubernetes.io/psp: eks.privileged
+Status:               Running
+IP:                   192.168.115.88
+IPs:
+  IP:  192.168.115.88
+Containers:
+  stocks-ic:
+    Container ID:   containerd://952d011f0e0a4ca971071cb925d891fd6f094e5a2b879d2900e08689f92117c3
+    Image:          docker.io/abiraman123/mc-stock-service:v0.1
+    Image ID:       docker.io/abiraman123/mc-stock-service@sha256:8f21a893cf597089bdf21b318998c4247bc41d8a0af0bb0fdfec92be8a758c8d
+    Port:           <none>
+    Host Port:      <none>
+    State:          Running
+      Started:      Sat, 14 Aug 2021 15:46:43 +0530
+    Ready:          True
+    Restart Count:  0
+    Environment:
+      DB_URL:          aws-rds.default.svc.cluster.local:3306/stocksdb
+      DB_PASSWORD:     password
+      ACTIVE_PROFILE:  aws
+    Mounts:
+      /var/run/secrets/kubernetes.io/serviceaccount from default-token-b45bp (ro)
+Conditions:
+  Type              Status
+  Initialized       True
+  Ready             True
+  ContainersReady   True
+  PodScheduled      True
+Volumes:
+  default-token-b45bp:
+    Type:        Secret (a volume populated by a Secret)
+    SecretName:  default-token-b45bp
+    Optional:    false
+QoS Class:       BestEffort
+Node-Selectors:  <none>
+Tolerations:     node.kubernetes.io/not-ready:NoExecute op=Exists for 300s
+                 node.kubernetes.io/unreachable:NoExecute op=Exists for 300s
+Events:
+  Type     Reason           Age    From               Message
+  ----     ------           ----   ----               -------
+  Warning  LoggingDisabled  3m53s  fargate-scheduler  Disabled logging because aws-logging configmap was not found. configmap "aws-logging" not found
+  Normal   Scheduled        2m48s  fargate-scheduler  Successfully assigned default/stocks-node to fargate-ip-192-168-115-88.us-east-2.compute.internal
+  Normal   Pulling          2m48s  kubelet            Pulling image "docker.io/abiraman123/mc-stock-service:v0.1"
+  Normal   Pulled           2m41s  kubelet            Successfully pulled image "docker.io/abiraman123/mc-stock-service:v0.1" in 7.243986992s
+  Normal   Created          2m40s  kubelet            Created container stocks-ic
+  Normal   Started          2m39s  kubelet            Started container stocks-ic
+
+c:\Users\User\Downloads>kubectl get services
+NAME         TYPE           CLUSTER-IP   EXTERNAL-IP                                           PORT(S)    AGE
+aws-rds      ExternalName   <none>       stocks-rds.cpww3n4jiefr.us-east-2.rds.amazonaws.com   3306/TCP   40m
+kubernetes   ClusterIP      10.100.0.1   <none>                                                443/TCP    178m
+
+c:\Users\User\Downloads>kubectl delete pod stocks-node
+pod "stocks-node" deleted
+
+c:\Users\User\Downloads>kubectl apply -f c:\k8s\stock-deployment.yml
+deployment.apps/stock-service created
+
+c:\Users\User\Downloads>kubectl get deployments
+NAME            READY   UP-TO-DATE   AVAILABLE   AGE
+stock-service   0/1     1            0           14s
+
+c:\Users\User\Downloads>kubectl get pods
+NAME                            READY   STATUS    RESTARTS   AGE
+stock-service-f556cb99c-rmkgq   0/1     Pending   0          23s
+
+c:\Users\User\Downloads>kubectl get pods
+NAME                            READY   STATUS    RESTARTS   AGE
+stock-service-f556cb99c-rmkgq   0/1     Pending   0          28s
+
+c:\Users\User\Downloads>kubectl get pods
+NAME                            READY   STATUS    RESTARTS   AGE
+stock-service-f556cb99c-rmkgq   0/1     Pending   0          32s
+
+c:\Users\User\Downloads>kubectl get events
+LAST SEEN   TYPE      REASON                    OBJECT                                                       MESSAGE
+12m         Normal    Starting                  node/fargate-ip-192-168-115-88.us-east-2.compute.internal    Starting kubelet.
+12m         Warning   InvalidDiskCapacity       node/fargate-ip-192-168-115-88.us-east-2.compute.internal    invalid capacity 0 on image filesystem
+12m         Normal    NodeHasSufficientMemory   node/fargate-ip-192-168-115-88.us-east-2.compute.internal    Node fargate-ip-192-168-115-88.us-east-2.compute.internal status is now: NodeHasSufficientMemory
+12m         Normal    NodeHasNoDiskPressure     node/fargate-ip-192-168-115-88.us-east-2.compute.internal    Node fargate-ip-192-168-115-88.us-east-2.compute.internal status is now: NodeHasNoDiskPressure
+12m         Normal    NodeHasSufficientPID      node/fargate-ip-192-168-115-88.us-east-2.compute.internal    Node fargate-ip-192-168-115-88.us-east-2.compute.internal status is now: NodeHasSufficientPID
+12m         Normal    NodeAllocatableEnforced   node/fargate-ip-192-168-115-88.us-east-2.compute.internal    Updated Node Allocatable limit across pods
+12m         Normal    RegisteredNode            node/fargate-ip-192-168-115-88.us-east-2.compute.internal    Node fargate-ip-192-168-115-88.us-east-2.compute.internal event: Registered Node fargate-ip-192-168-115-88.us-east-2.compute.internal in Controller
+12m         Normal    NodeReady                 node/fargate-ip-192-168-115-88.us-east-2.compute.internal    Node fargate-ip-192-168-115-88.us-east-2.compute.internal status is now: NodeReady
+6m23s       Normal    RemovingNode              node/fargate-ip-192-168-115-88.us-east-2.compute.internal    Node fargate-ip-192-168-115-88.us-east-2.compute.internal event: Removing Node fargate-ip-192-168-115-88.us-east-2.compute.internal from Controller
+55m         Normal    RemovingNode              node/fargate-ip-192-168-190-137.us-east-2.compute.internal   Node fargate-ip-192-168-190-137.us-east-2.compute.internal event: Removing Node fargate-ip-192-168-190-137.us-east-2.compute.internal from Controller
+41m         Normal    Starting                  node/fargate-ip-192-168-99-127.us-east-2.compute.internal    Starting kubelet.
+41m         Warning   InvalidDiskCapacity       node/fargate-ip-192-168-99-127.us-east-2.compute.internal    invalid capacity 0 on image filesystem
+41m         Normal    NodeHasSufficientMemory   node/fargate-ip-192-168-99-127.us-east-2.compute.internal    Node fargate-ip-192-168-99-127.us-east-2.compute.internal status is now: NodeHasSufficientMemory
+41m         Normal    NodeHasNoDiskPressure     node/fargate-ip-192-168-99-127.us-east-2.compute.internal    Node fargate-ip-192-168-99-127.us-east-2.compute.internal status is now: NodeHasNoDiskPressure
+41m         Normal    NodeHasSufficientPID      node/fargate-ip-192-168-99-127.us-east-2.compute.internal    Node fargate-ip-192-168-99-127.us-east-2.compute.internal status is now: NodeHasSufficientPID
+41m         Normal    NodeAllocatableEnforced   node/fargate-ip-192-168-99-127.us-east-2.compute.internal    Updated Node Allocatable limit across pods
+41m         Normal    RegisteredNode            node/fargate-ip-192-168-99-127.us-east-2.compute.internal    Node fargate-ip-192-168-99-127.us-east-2.compute.internal event: Registered Node fargate-ip-192-168-99-127.us-east-2.compute.internal in Controller
+41m         Normal    NodeReady                 node/fargate-ip-192-168-99-127.us-east-2.compute.internal    Node fargate-ip-192-168-99-127.us-east-2.compute.internal status is now: NodeReady
+11m         Normal    RemovingNode              node/fargate-ip-192-168-99-127.us-east-2.compute.internal    Node fargate-ip-192-168-99-127.us-east-2.compute.internal event: Removing Node fargate-ip-192-168-99-127.us-east-2.compute.internal from Controller
+55m         Normal    Killing                   pod/hello-node-7567d9fdc9-tcrxn                              Stopping container echoserver
+42m         Warning   LoggingDisabled           pod/hello-node-7567d9fdc9-xrz44                              Disabled logging because aws-logging configmap was not found. configmap "aws-logging" not found
+41m         Normal    Scheduled                 pod/hello-node-7567d9fdc9-xrz44                              Successfully assigned default/hello-node-7567d9fdc9-xrz44 to fargate-ip-192-168-99-127.us-east-2.compute.internal
+41m         Normal    Pulling                   pod/hello-node-7567d9fdc9-xrz44                              Pulling image "k8s.gcr.io/echoserver:1.4"
+41m         Normal    TaintManagerEviction      pod/hello-node-7567d9fdc9-xrz44                              Cancelling deletion of Pod default/hello-node-7567d9fdc9-xrz44
+40m         Normal    Pulled                    pod/hello-node-7567d9fdc9-xrz44                              Successfully pulled image "k8s.gcr.io/echoserver:1.4" in 6.206657628s
+40m         Normal    Created                   pod/hello-node-7567d9fdc9-xrz44                              Created container echoserver
+40m         Normal    Started                   pod/hello-node-7567d9fdc9-xrz44                              Started container echoserver
+11m         Normal    Killing                   pod/hello-node-7567d9fdc9-xrz44                              Stopping container echoserver
+42m         Normal    SuccessfulCreate          replicaset/hello-node-7567d9fdc9                             Created pod: hello-node-7567d9fdc9-xrz44
+55m         Normal    UpdatedLoadBalancer       service/hello-node                                           Updated load balancer with new hosts
+54m         Normal    DeletingLoadBalancer      service/hello-node                                           Deleting load balancer
+54m         Normal    DeletedLoadBalancer       service/hello-node                                           Deleted load balancer
+42m         Normal    ScalingReplicaSet         deployment/hello-node                                        Scaled up replica set hello-node-7567d9fdc9 to 1
+41m         Normal    EnsuringLoadBalancer      service/hello-node                                           Ensuring load balancer
+41m         Normal    EnsuredLoadBalancer       service/hello-node                                           Ensured load balancer
+41m         Normal    UpdatedLoadBalancer       service/hello-node                                           Updated load balancer with new hosts
+12m         Normal    DeletingLoadBalancer      service/hello-node                                           Deleting load balancer
+12m         Warning   PortNotAllocated          service/hello-node                                           Port 31470 is not allocated; repairing
+12m         Warning   ClusterIPNotAllocated     service/hello-node                                           Cluster IP [IPv4]:10.100.241.48 is not allocated; repairing
+12m         Normal    DeletedLoadBalancer       service/hello-node                                           Deleted load balancer
+41m         Normal    Starting                  node/ip-10-0-214-176.us-east-2.compute.internal              Starting kube-proxy.
+12m         Normal    Starting                  node/ip-10-0-31-5.us-east-2.compute.internal                 Starting kube-proxy.
+44s         Warning   LoggingDisabled           pod/stock-service-f556cb99c-rmkgq                            Disabled logging because aws-logging configmap was not found. configmap "aws-logging" not found
+46s         Normal    SuccessfulCreate          replicaset/stock-service-f556cb99c                           Created pod: stock-service-f556cb99c-rmkgq
+46s         Normal    ScalingReplicaSet         deployment/stock-service                                     Scaled up replica set stock-service-f556cb99c to 1
+13m         Warning   LoggingDisabled           pod/stocks-node                                              Disabled logging because aws-logging configmap was not found. configmap "aws-logging" not found
+12m         Normal    Scheduled                 pod/stocks-node                                              Successfully assigned default/stocks-node to fargate-ip-192-168-115-88.us-east-2.compute.internal
+12m         Normal    Pulling                   pod/stocks-node                                              Pulling image "docker.io/abiraman123/mc-stock-service:v0.1"
+12m         Normal    TaintManagerEviction      pod/stocks-node                                              Cancelling deletion of Pod default/stocks-node
+12m         Normal    Pulled                    pod/stocks-node                                              Successfully pulled image "docker.io/abiraman123/mc-stock-service:v0.1" in 7.243986992s
+12m         Normal    Created                   pod/stocks-node                                              Created container stocks-ic
+12m         Normal    Started                   pod/stocks-node                                              Started container stocks-ic
+6m34s       Normal    Killing                   pod/stocks-node                                              Stopping container stocks-ic
+
+c:\Users\User\Downloads>kubectl get deployments
+NAME            READY   UP-TO-DATE   AVAILABLE   AGE
+stock-service   0/1     1            0           71s
+
+c:\Users\User\Downloads>kubectl get pods
+NAME                            READY   STATUS    RESTARTS   AGE
+stock-service-f556cb99c-rmkgq   1/1     Running   0          77s
+
+c:\Users\User\Downloads>kubectl get deployments
+NAME            READY   UP-TO-DATE   AVAILABLE   AGE
+stock-service   1/1     1            1           82s
+
+c:\Users\User\Downloads>kubectl get pods
+NAME                            READY   STATUS    RESTARTS   AGE
+stock-service-f556cb99c-rmkgq   1/1     Running   0          2m2s
+
+c:\Users\User\Downloads>kubectl expose deployment stock-service --type=LoadBalancer --port=8082
+service/stock-service exposed
+
+c:\Users\User\Downloads>kubectl get services
+NAME            TYPE           CLUSTER-IP      EXTERNAL-IP                                                               PORT(S)          AGE
+aws-rds         ExternalName   <none>          stocks-rds.cpww3n4jiefr.us-east-2.rds.amazonaws.com                       3306/TCP         49m
+kubernetes      ClusterIP      10.100.0.1      <none>                                                                    443/TCP          3h7m
+stock-service   LoadBalancer   10.100.37.101   a5f5aff8aff5f421bbcd76f38820d49a-2129289140.us-east-2.elb.amazonaws.com   8082:31821/TCP   9s
+
+c:\Users\User\Downloads>kubectl describe deployments stock-service
+Name:                   stock-service
+Namespace:              default
+CreationTimestamp:      Sat, 14 Aug 2021 15:58:02 +0530
+Labels:                 <none>
+Annotations:            deployment.kubernetes.io/revision: 1
+Selector:               app=stock-node
+Replicas:               1 desired | 1 updated | 1 total | 1 available | 0 unavailable
+StrategyType:           RollingUpdate
+MinReadySeconds:        0
+RollingUpdateStrategy:  25% max unavailable, 25% max surge
+Pod Template:
+  Labels:  app=stock-node
+  Containers:
+   stock-ic:
+    Image:      docker.io/abiraman123/mc-stock-service:v0.1
+    Port:       8082/TCP
+    Host Port:  0/TCP
+    Environment:
+      DB_URL:          aws-rds.default.svc.cluster.local:3306/stocksdb
+      DB_PASSWORD:     password
+      ACTIVE_PROFILE:  aws
+    Mounts:            <none>
+  Volumes:             <none>
+Conditions:
+  Type           Status  Reason
+  ----           ------  ------
+  Available      True    MinimumReplicasAvailable
+  Progressing    True    NewReplicaSetAvailable
+OldReplicaSets:  <none>
+NewReplicaSet:   stock-service-f556cb99c (1/1 replicas created)
+Events:
+  Type    Reason             Age   From                   Message
+  ----    ------             ----  ----                   -------
+  Normal  ScalingReplicaSet  11m   deployment-controller  Scaled up replica set stock-service-f556cb99c to 1
+
+c:\Users\User\Downloads>kubectl delete service stock-service
+service "stock-service" deleted
+
+c:\Users\User\Downloads>kubectl delete all -all
+Error: unknown shorthand flag: 'a' in -all
+See 'kubectl delete --help' for usage.
+
+c:\Users\User\Downloads>kubectl delete all --all
+pod "stock-service-f556cb99c-rmkgq" deleted
+service "aws-rds" deleted
+service "kubernetes" deleted
+deployment.apps "stock-service" deleted
+
+c:\Users\User\Downloads>kubectl get pods
+No resources found in default namespace.
+
+
+c:\Users\User\Downloads>eksctl create nodegroup --cluster=test-k8s --name=nodes
+2021-08-14 16:17:01 [ℹ]  eksctl version 0.61.0-rc.0
+2021-08-14 16:17:01 [ℹ]  using region us-east-2
+2021-08-14 16:17:02 [ℹ]  will use version 1.20 for new nodegroup(s) based on control plane version
+2021-08-14 16:17:09 [ℹ]  nodegroup "nodes" will use "" [AmazonLinux2/1.20]
+2021-08-14 16:17:12 [ℹ]  1 existing nodegroup(s) (nodes) will be excluded
+2021-08-14 16:17:13 [ℹ]  2 sequential tasks: { fix cluster compatibility, no tasks }
+2021-08-14 16:17:13 [ℹ]  checking cluster stack for missing resources
+2021-08-14 16:17:15 [ℹ]  cluster stack has all required resources
+2021-08-14 16:17:15 [ℹ]  no tasks
+2021-08-14 16:17:15 [✔]  created 0 nodegroup(s) in cluster "test-k8s"
+2021-08-14 16:17:15 [✔]  created 0 managed nodegroup(s) in cluster "test-k8s"
+2021-08-14 16:17:16 [ℹ]  checking security group configuration for all nodegroups
+2021-08-14 16:17:16 [ℹ]  all nodegroups have up-to-date configuration
+
+c:\Users\User\Downloads>eksctl delete nodegroup --cluster=test-k8s --name=nodes
+2021-08-14 16:17:45 [ℹ]  eksctl version 0.61.0-rc.0
+2021-08-14 16:17:45 [ℹ]  using region us-east-2
+2021-08-14 16:17:47 [ℹ]  1 nodegroup (nodes) was included (based on the include/exclude rules)
+2021-08-14 16:17:47 [ℹ]  will drain 1 nodegroup(s) in cluster "test-k8s"
+2021-08-14 16:17:49 [ℹ]  cordon node "ip-192-168-48-31.us-east-2.compute.internal"
+2021-08-14 16:17:50 [!]  ignoring DaemonSet-managed Pods: kube-system/aws-node-kvqjn, kube-system/kube-proxy-wlppm
+2021-08-14 16:17:52 [!]  ignoring DaemonSet-managed Pods: kube-system/aws-node-kvqjn, kube-system/kube-proxy-wlppm
+2021-08-14 16:17:53 [!]  ignoring DaemonSet-managed Pods: kube-system/aws-node-kvqjn, kube-system/kube-proxy-wlppm
+2021-08-14 16:17:53 [✔]  drained all nodes: [ip-192-168-48-31.us-east-2.compute.internal]
+2021-08-14 16:17:53 [ℹ]  will delete 1 nodegroups from cluster "test-k8s"
+2021-08-14 16:17:56 [ℹ]  1 task: { 1 task: { delete nodegroup "nodes" [async] } }
+2021-08-14 16:17:57 [ℹ]  will delete stack "eksctl-test-k8s-nodegroup-nodes"
+2021-08-14 16:17:57 [ℹ]  will delete 0 nodegroups from auth ConfigMap in cluster "test-k8s"
+2021-08-14 16:17:57 [✔]  deleted 1 nodegroup(s) from cluster "test-k8s"
+
+c:\Users\User\Downloads>eksctl delete cluster --name=test-k8s
+2021-08-14 16:20:29 [ℹ]  eksctl version 0.61.0-rc.0
+2021-08-14 16:20:29 [ℹ]  using region us-east-2
+2021-08-14 16:20:29 [ℹ]  deleting EKS cluster "test-k8s"
+2021-08-14 16:20:32 [ℹ]  deleting Fargate profile "test-fargate"
+2021-08-14 16:24:51 [ℹ]  deleted Fargate profile "test-fargate"
+2021-08-14 16:24:51 [ℹ]  deleted 1 Fargate profile(s)
+2021-08-14 16:24:54 [✔]  kubeconfig has been updated
+2021-08-14 16:24:54 [ℹ]  cleaning up AWS load balancers created by Kubernetes objects of Kind Service or Ingress
+2021-08-14 16:25:01 [ℹ]  2 sequential tasks: { 2 sequential sub-tasks: { 2 sequential sub-tasks: { delete IAM role for serviceaccount "kube-system/aws-node", delete serviceaccount "kube-system/aws-node" }, delete IAM OIDC provider }, delete cluster control plane "test-k8s" [async] }
+2021-08-14 16:25:01 [ℹ]  will delete stack "eksctl-test-k8s-addon-iamserviceaccount-kube-system-aws-node"
+2021-08-14 16:25:01 [ℹ]  waiting for stack "eksctl-test-k8s-addon-iamserviceaccount-kube-system-aws-node" to get deleted
+2021-08-14 16:25:01 [ℹ]  waiting for CloudFormation stack "eksctl-test-k8s-addon-iamserviceaccount-kube-system-aws-node"
+2021-08-14 16:25:18 [ℹ]  waiting for CloudFormation stack "eksctl-test-k8s-addon-iamserviceaccount-kube-system-aws-node"
+2021-08-14 16:25:19 [ℹ]  deleted serviceaccount "kube-system/aws-node"
+2021-08-14 16:25:20 [ℹ]  will delete stack "eksctl-test-k8s-cluster"
+2021-08-14 16:25:21 [✔]  all cluster resources were deleted
+
+c:\Users\User\Downloads>

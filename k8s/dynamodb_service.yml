@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: aws-dynamodb
+spec:
+  type: ExternalName
+  externalName: dynamodb.us-east-2.amazonaws.com
+  ports:
+    - name: http
+      protocol: TCP
+      port: 80
+      targetPort: 80

@@ -1,0 +1,28 @@
+spring:
+  cloud:
+    gateway:
+      globalcors:
+        cors-configurations:
+          '[/**]':
+            allowedOrigins: 
+            - 'http://localhost:3000'
+            allowedMethods:
+            - GET
+            allowedHeaders: '*'
+      routes:
+      - id: mc-company
+        uri: 'http://localhost:8081'
+        predicates:
+        - Path=/company/**
+        filters:
+        - RewritePath=/company(?<segment>/?.*), /api/v1.0/market/company/$\{segment}
+      - id: mc-stock
+        uri: 'http://localhost:8082'
+        predicates:
+        - Path=/stock/**
+        filters:
+        - RewritePath=/stock(?<segment>/?.*), /api/v1.0/market/stock/$\{segment}
+  application:
+    name: mc-api-gateway
+server:
+  port: 8083

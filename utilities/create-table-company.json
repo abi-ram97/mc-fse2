@@ -1,0 +1,17 @@
+{
+"TableName":"Company",
+"KeySchema": [
+            {
+                "KeyType": "HASH",
+                "AttributeName": "CompanyCode"
+            }],
+			 "AttributeDefinitions": [
+            {
+                "AttributeName": "CompanyCode",
+                "AttributeType": "S"
+            }],
+			"ProvisionedThroughput": {
+            "WriteCapacityUnits": 2,
+            "ReadCapacityUnits": 4
+        }
+}

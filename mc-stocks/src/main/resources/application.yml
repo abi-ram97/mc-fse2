@@ -1,0 +1,30 @@
+server:
+  port: ${PORT:8082}
+  error:
+    include-message: always
+    include-binding-errors: always
+  
+spring:
+  application:
+    name: mc-stocks-service
+  profiles:
+    active:
+    - ${ACTIVE_PROFILE:local}
+  datasource:
+    url: jdbc:mysql://${DB_URL:localhost:3306/stocksdb}
+    username: ${DB_USERNAME:root}
+    password: ${DB_PASSWORD:root}
+  jpa:
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQL8Dialect
+management:
+  endpoints:
+    web:
+      exposure:
+        include:
+        - metrics
+        - prometheus
+        - health
