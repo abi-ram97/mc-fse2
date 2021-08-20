@@ -1,0 +1,90 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: company-service
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: company-node
+  template:
+    metadata:
+      labels:
+        app: company-node
+    spec:
+      containers:
+      - name: company-ic
+        image: docker.io/abiraman123/mc-company-service:v0.1
+        resources:
+          requests:
+            memory: "386Mi"
+            cpu: "256m"
+          limits:
+            memory: "512Mi"
+            cpu: "512m"
+        env:
+        - name: AWS_ACCESS_KEY
+          value: ""
+        - name: AWS_SECRET_KEY
+          value: ""
+        - name: AWS_REGION
+          value: "us-east-2"
+        - name: DB_URL
+          value: "aws-dynamodb.default.svc.cluster.local:80"
+        - name: STOCK_SERVICE_URL
+          value: "http://stock-service:8082/api/v1.0/market/stock"
+        ports:
+        - containerPort: 8081
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: company-service
+spec:
+  type: LoadBalancer 
+  selector:
+    app: company-node
+  externalTrafficPolicy: Cluster
+  ports:
+  - protocol: TCP
+    port: 8081
+    targetPort: 8081
+---
+apiVersion: autoscaling/v2beta2
+kind: HorizontalPodAutoscaler
+metadata:
+  name: company-hpa
+  namespace: default
+spec:
+  scaleTargetRef:
+    apiVersion: apps/v1
+    kind: Deployment
+    name: company-service
+  minReplicas: 1
+  maxReplicas: 3
+  metrics:
+  - type: Resource
+    resource:
+      name: cpu
+      target:
+        type: Utilization
+        averageUtilization: 50
+  - type: Resource
+    resource:
+      name: memory
+      target:
+        type: Utilization
+        averageUtilization: 85
+  behavior:
+    scaleDown:
+      stabilizationWindowSeconds: 300
+      policies:
+      - type: Percent
+        value: 100
+        periodSeconds: 15
+    scaleUp:
+      stabilizationWindowSeconds: 0
+      policies:
+      - type: Percent
+        value: 100
+        periodSeconds: 15
