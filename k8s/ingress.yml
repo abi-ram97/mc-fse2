@@ -1,0 +1,25 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: example-ingress
+  annotations:
+    nginx.ingress.kubernetes.io/rewrite-target: /api/v1.0/market/
+spec:
+  rules:
+    - host: estockapp.local
+      http:
+        paths:
+          - path: /company(/|$)(.*)
+            pathType: Prefix
+            backend:
+              service:
+                name: company-service
+                port:
+                  number: 8081
+          - path: /stock(/|$)(.*)
+            pathType: Prefix
+            backend:
+              service:
+                name: stock-service
+                port:
+                  number: 8082
