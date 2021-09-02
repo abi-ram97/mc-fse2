@@ -18,10 +18,10 @@ spec:
         resources:
           requests:
             memory: "386Mi"
-            cpu: "256m"
+            cpu: "75m"
           limits:
             memory: "512Mi"
-            cpu: "512m"
+            cpu: "100m"
         env:
         - name: AWS_ACCESS_KEY
           value: ""
@@ -45,5 +45,7 @@ spec:
   selector:
     app: company-node
   ports:
-    - port: 8081
+    - protocol: TCP 
+      port: 80
       targetPort: 8081
+      name: http

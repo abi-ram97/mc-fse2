@@ -16,8 +16,6 @@ kubectl exec -it hello-node-7567d9fdc9-xrz44<pod_name> bash
 
 kubectl exec -it hello-node-7567d9fdc9-xrz44<pod_name> -- /bin/sh
 
-kubectl logs <pod_name>
-
 kubectl expose deployment hello-node --type=LoadBalancer --port=8080
 
 kubectl delete deployments hello-node
@@ -36,21 +34,9 @@ kubectl expose deployment stock-service --type=LoadBalancer --port=8082
 
 kubectl get services
 
-kubectl autoscale deployment company-service --cpu-percent=50 --min=1 --max=3
-
-kubectl get hpa
-
-kubectl top pods
-
-kubectl top nodes
-
-kubectl get pods
-
-kubectl exec -it <pod_name> -- /bin/sh
-
-kubectl logs <pod_name>
-
 kubectl delete all --all
+
+eksctl utils update-cluster-logging --enable-types={SPECIFY-YOUR-LOG-TYPES-HERE (e.g. all)} --region=us-east-2 --cluster=mc-fse
 
 eksctl delete nodegroup --cluster=test-k8s --name=nodes
 
@@ -58,14 +44,6 @@ eksctl delete cluster --name=test-k8s
 
 Ref: https://github.com/weaveworks/eksctl/tree/main/examples
 
----
+kubectl apply -f https://raw.githubusercontent.com/kubernetes/ingress-nginx/controller-0.32.0/deploy/static/provider/aws/deploy.yaml
 
-minikube start
-
-minikube addons enable metrics-server
-
-minikube dashboard --url
-
-minikube service <service-name>
-
-minikube stop
+## while accessing ingress url add header Host with value hostname
