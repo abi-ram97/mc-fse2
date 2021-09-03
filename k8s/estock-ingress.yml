@@ -1,0 +1,26 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: estock-ingress
+  annotations:
+    kubernetes.io/ingress.class: "nginx"
+    nginx.ingress.kubernetes.io/rewrite-target: /api/v1.0/market/$1/$2
+spec:
+  rules:
+    - host: estock.test.com
+      http:
+        paths:
+          - path: /(company)/(.*)
+            pathType: Prefix
+            backend:
+              service:
+                name: company-service
+                port:
+                  number: 80
+          - path: /(stock)/(.*)
+            pathType: Prefix
+            backend:
+              service:
+                name: stock-service
+                port:
+                  number: 80

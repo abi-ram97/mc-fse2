@@ -16,13 +16,20 @@ spec:
       name: cpu
       target:
         type: Utilization
-        averageUtilization: 50
+        averageUtilization: 75
   - type: Resource
     resource:
       name: memory
       target:
         type: Utilization
         averageUtilization: 85
+  - type: Pods
+    pods:
+      metric:
+        name: packets-per-second
+      target:
+        type: AverageValue
+        averageValue: 1k
   behavior:
     scaleDown:
       stabilizationWindowSeconds: 300

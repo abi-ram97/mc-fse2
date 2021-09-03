@@ -17,11 +17,11 @@ spec:
         image: docker.io/abiraman123/mc-company-service:v0.2
         resources:
           requests:
-            memory: "386Mi"
-            cpu: "75m"
+            memory: "256Mi"
+            cpu: "96m"
           limits:
-            memory: "512Mi"
-            cpu: "100m"
+            memory: "384Mi"
+            cpu: "128m"
         env:
         - name: AWS_ACCESS_KEY
           value: ""
@@ -32,7 +32,9 @@ spec:
         - name: DB_URL
           value: "aws-dynamodb.default.svc.cluster.local:80"
         - name: STOCK_SERVICE_URL
-          value: "http://stock-service:8082/api/v1.0/market/stock"
+          value: "http://stock-service/api/v1.0/market/stock"
+        - name: ACTIVE_PROFILE
+          value: "aws"
         ports:
         - containerPort: 8081
 ---
@@ -45,7 +47,7 @@ spec:
   selector:
     app: company-node
   ports:
-    - protocol: TCP 
+    - protocol: TCP
       port: 80
       targetPort: 8081
       name: http
